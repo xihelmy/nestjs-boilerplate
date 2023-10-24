@@ -1,4 +1,4 @@
-# IMS NestJS Backend
+# NestJS Backend
 
 This project use NestJS as a Framework base
 

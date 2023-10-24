@@ -1,4 +1,4 @@
-import { PrismaService } from '@app/database/prima.service';
+import { PrismaService } from '@app/database/prisma.service';
 import { NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { CompanyService } from './company.service';

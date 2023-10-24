@@ -4,9 +4,14 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { AllExceptionsFilter } from './exceptions/all-exceptions.filter';
 import { TransformInterceptor } from './interceptors/transform.interceptor';
+import { SeedService } from './domains/auth/seed.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  // Seed database
+  const seedService = app.get(SeedService);
+  await seedService.seedDatabase();
 
   // Apply the global exception filter
   app.useGlobalFilters(new AllExceptionsFilter());
@@ -23,7 +28,7 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('IMS Documentation')
+    .setTitle('API Documentation')
     .setDescription('API Description')
     .setVersion('1.0')
     .addBearerAuth()

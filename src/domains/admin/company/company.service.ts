@@ -1,4 +1,4 @@
-import { PrismaService } from '@app/database/prima.service';
+import { PrismaService } from '@app/database/prisma.service';
 import {
   CompanyPaginationFilterDto,
   CreateCompanyDto,
